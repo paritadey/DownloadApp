@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_layout"
+    android:id="@+id/motionLayout"
+    app:layoutDescription="@xml/content_main_scene"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/fragment_main">
+    android:layout_height="match_parent">
 
-    <com.parita.customButton.FillButton
-        android:id="@+id/fb_first"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="FIRST BUTTON"
+
+
+    <TextView
+        android:id="@+id/button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@color/white"
+        android:textSize="@dimen/fourteen_sp"
+        android:textColor="@color/black"
         android:gravity="center"
-        android:padding="16dp"
-        android:background="@color/black"
-        app:fillColor="@color/colorPrimaryDark"
-        app:fillDuration="500"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
