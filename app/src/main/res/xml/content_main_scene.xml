@@ -13,20 +13,37 @@
             motion:touchAnchorSide="right" />-->
         <OnClick
             motion:clickAction="transitionToEnd"
-            motion:targetId="@+id/button"/>
+            motion:targetId="@+id/view"/>
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
         <Constraint
-            android:id="@id/button"
-            android:layout_width="64dp"
+            android:id="@id/view"
+            android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:layout_marginStart="8dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintStart_toStartOf="parent">
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp">
             <CustomAttribute
                 motion:attributeName="BackgroundColor"
-                motion:customColorValue="#D81B60" />
+                motion:customColorValue="@color/purple_200" />
+            <CustomAttribute
+                motion:attributeName="Text"
+                motion:customStringValue="Download Started" />
+        </Constraint>
+        <Constraint
+            android:id="@id/button"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="@android:color/transparent" />
             <CustomAttribute
                 motion:attributeName="Text"
                 motion:customStringValue="" />
@@ -35,18 +52,35 @@
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
+            android:id="@id/view"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp">
+            <CustomAttribute
+                motion:attributeName="BackgroundColor"
+                motion:customColorValue="@color/purple_200" />
+            <CustomAttribute
+                motion:attributeName="Text"
+                motion:customStringValue="Download Started" />
+        </Constraint>
+        <Constraint
             android:id="@id/button"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:layout_marginEnd="8dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent">
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp">
             <CustomAttribute
                 motion:attributeName="BackgroundColor"
-                motion:customColorValue="#9999FF" />
+                motion:customColorValue="@color/purple_500" />
             <CustomAttribute
                 motion:attributeName="Text"
-                motion:customStringValue="Hello World" />
+                motion:customStringValue="Download Completed" />
         </Constraint>
     </ConstraintSet>
 
