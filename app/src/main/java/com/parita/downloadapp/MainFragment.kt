@@ -205,15 +205,16 @@ class MainFragment : Fragment() {
                         .setContentTitle("DownloadApp")
                         .setContentText("All Download completed")
 
-                val notificationIntent = Intent(requireContext(), DetailsFragment::class.java)
+                val notificationIntent = Intent(requireActivity().applicationContext, MainActivity::class.java)
                 notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                notificationIntent.putExtra("message", "This is a notification message")
+                notificationIntent.putExtra("message", "DetailsFragment")
 
                 val pendingIntent = PendingIntent.getActivity(
-                    requireContext(), 0, notificationIntent,
+                    requireActivity(), 0, notificationIntent,
                     PendingIntent.FLAG_UPDATE_CURRENT
                 )
                 mBuilder.setContentIntent(pendingIntent)
+                mBuilder.setAutoCancel(true)
 
                 val notificationManager =
                     requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

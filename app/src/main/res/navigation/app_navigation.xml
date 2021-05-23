@@ -10,4 +10,9 @@
         android:name="com.parita.downloadapp.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.parita.downloadapp.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
 </navigation>
