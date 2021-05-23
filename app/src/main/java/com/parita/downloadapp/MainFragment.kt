@@ -73,8 +73,8 @@ class MainFragment : Fragment() {
                 Handler().postDelayed(object : Runnable{
                     override fun run() {
                         binding.downloadButton.motionLayout.button.text = ""
-                        binding.downloadButton.motionLayout.transitionToStart()//Using this will create a smooth transition to the initial state.
-                        //binding.downloadButton.motionLayout.jumpToState(R.id.start)//Using this will create a direct jump to the initial state with out the animation.
+                      //  binding.downloadButton.motionLayout.transitionToStart()//Using this will create a smooth transition to the initial state.
+                        binding.downloadButton.motionLayout.jumpToState(R.id.start)//Using this will create a direct jump to the initial state with out the animation.
                     }
                 }
                 ,1000)
