@@ -8,6 +8,8 @@ import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.MotionEvent
 import androidx.appcompat.widget.AppCompatButton
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.parita.loadingbutton.direction.CustomDirection
 import com.parita.loadingbutton.direction.LeftToRightDirection
 
@@ -23,13 +25,16 @@ class CustomButton @JvmOverloads constructor(context: Context, attrs: AttributeS
     private val fillingDuration: Long
 
     private val fillingPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private var drawProgress = false
+    private var drawProgress : MutableLiveData<Boolean> = MutableLiveData()
+    val _drawProgress : LiveData<Boolean>
+        get()=drawProgress
 
     open var onButtonFilled: (() -> Unit)? = null
     var cutomDirection: CustomDirection = LeftToRightDirection()
     val customWidthValueAnimator = ValueAnimator()
 
     init {
+        drawProgress.value = false
         context.obtainStyledAttributes(attrs, R.styleable.CustomButton, defStyle, 0).apply {
             fillingColor = getColor(R.styleable.CustomButton_fillColor, resources.getColor(R.color.purple_500))
             fillingAlpha = getInt(R.styleable.CustomButton_fillAlpha, 128)
@@ -50,7 +55,7 @@ class CustomButton @JvmOverloads constructor(context: Context, attrs: AttributeS
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        if (drawProgress && onButtonFilled != null){
+        if (drawProgress.value == true && onButtonFilled != null){
             canvas?.drawRect(fillingRect, fillingPaint)
         }
     }
@@ -58,12 +63,12 @@ class CustomButton @JvmOverloads constructor(context: Context, attrs: AttributeS
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         when(event?.action){
             MotionEvent.ACTION_DOWN -> {
-                drawProgress = true
+                drawProgress.value = true
                 startFillingAnimation()
                 return true
             }
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-                drawProgress = false
+                drawProgress.value = false
                 stopFillingAnimation()
                 return true
             }

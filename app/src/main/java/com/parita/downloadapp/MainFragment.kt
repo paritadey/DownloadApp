@@ -25,6 +25,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import com.parita.downloadapp.databinding.FragmentMainBinding
 import com.parita.loadingbutton.CustomButton
@@ -65,6 +66,12 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initView()
         binding.download.onButtonFilled ={ binding.download.showFillButtonToast() }
+        binding.download._drawProgress.observe(viewLifecycleOwner, Observer {
+            if(it)
+                binding.download.text = "Download Started"
+            else
+                binding.download.text = "Download"
+        })
     }
 
     private fun initView() {
@@ -112,9 +119,7 @@ class MainFragment : Fragment() {
         }
         binding.downloadButton.motionLayout.setTransitionListener(transitionListner)
 */
-        binding.download.setOnClickListener{
-            checkRadioButton()
-        }
+
     }
 
     private fun checkRadioButton() {
@@ -274,6 +279,7 @@ class MainFragment : Fragment() {
         requireContext().unregisterReceiver(onComplete)
     }
     private fun CustomButton.showFillButtonToast(){
-        binding.download.text="Download Completed"
+        //binding.download.text="Download Completed"
+        checkRadioButton()
     }
 }
