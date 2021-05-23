@@ -1,0 +1,180 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:2:1-7:12
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:2:1-7:12
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:2:1-7:12
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\054189f17cf89e07a3918c021a69b000\core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\112a5d153fa2b09a5349058d6a977416\lifecycle-viewmodel-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\c9b22d5f3b414eccde449dfac12a62b6\lifecycle-livedata-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\c5141b97e2eff8a50bf39b617106fac9\lifecycle-livedata-core-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.3.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\62454d5448b62e43f4a58111c5d338f2\material-1.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8e69c753471953602de435c4c1cc09c0\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\459868a45b51282cc5b12724209d92ca\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\6099a00bcd99dff329198ed8601f36ae\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\156fd6e0003c203b80b99203079d0b4b\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\89633b97dc109f186aaec443ab1c617d\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\1d191caf76ebf412f237d28872efd3a9\appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\f1abcc824d667e5a35acb08109fd081c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\82040951ec0a5784f9c04c3c9c96a47b\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\88dec3298c0337dff4837298747701c9\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\5e662eb73d26d90c11478aec353902e4\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\56c7353e1987a3789eb6c332f8532e57\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\58b00585bd15fd65e98b32eb2750485d\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\85496b90e3a1136c1a7259e2b32b9006\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\fbf5e213d265b9ff48df63ca4012535c\media-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\6278e4c33a6f4a4a049f362e047d4481\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\59e10f0b50d7e2087df694ea5e68ec75\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\f8504b42dd730e683e92669d56ec88c2\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\da6bd613ae494f2b055b15145b857cb1\activity-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\e862ffca74ad530b898cf4b209d28464\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\0899ff91cb6838be6e247fdc6cf0a2c6\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8f90226a262cd8fbb0e841a9bdeeb940\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\7f549f090c877ece9967b2eb559f405f\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\6553a1bb8aa0e0ee87c56c30d44266dd\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.3.2] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\e6fa58920d9ff0fd64b2aeb8c35cfd3c\core-1.3.2\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\9e5b33a0ddb61e517096e29f72087c8a\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\64ec911bcab6758f55fac7cb3b41456f\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\d52b1610fcf9bf7da145b33fecfe96b7\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\2e4840494af0a5acaa64f0a22fd36542\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8d832f05e8cef35268d2155f720a94d8\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\5ba5b9c0138391e8a8ac45ec5baeab08\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\a9f8496d6adace700c0f6127a5ca1d0f\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\3100446a1b30b99411a5d1ee028cd834\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\5619f4589c59f612c218dc4ffeac4514\lifecycle-livedata-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\14abec974181db4b9df0eb7b66eb67a6\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\eb2100bcc7f46beb9cafa60df7df6f83\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\b3cef20f14b33fa24d7642e0c258e925\lifecycle-runtime-2.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\ec2eeebdb6dfbb7b0090a77eabe8a64e\savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\b40af0a0752a70d9293b85552d3ade6a\annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:2:1-7:12
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:2:1-7:12
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:2:1-7:12
+	package
+		ADDED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:3:5-38
+		INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+		INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+		ADDED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:2:1-7:12
+		INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+		ADDED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:2:1-7:12
+		INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml:5:22-76
+uses-sdk
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\054189f17cf89e07a3918c021a69b000\core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\054189f17cf89e07a3918c021a69b000\core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\112a5d153fa2b09a5349058d6a977416\lifecycle-viewmodel-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\112a5d153fa2b09a5349058d6a977416\lifecycle-viewmodel-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\c9b22d5f3b414eccde449dfac12a62b6\lifecycle-livedata-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\c9b22d5f3b414eccde449dfac12a62b6\lifecycle-livedata-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\c5141b97e2eff8a50bf39b617106fac9\lifecycle-livedata-core-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\c5141b97e2eff8a50bf39b617106fac9\lifecycle-livedata-core-ktx-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.3.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\62454d5448b62e43f4a58111c5d338f2\material-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.3.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\62454d5448b62e43f4a58111c5d338f2\material-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8e69c753471953602de435c4c1cc09c0\constraintlayout-2.0.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8e69c753471953602de435c4c1cc09c0\constraintlayout-2.0.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\459868a45b51282cc5b12724209d92ca\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\459868a45b51282cc5b12724209d92ca\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\6099a00bcd99dff329198ed8601f36ae\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\6099a00bcd99dff329198ed8601f36ae\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\156fd6e0003c203b80b99203079d0b4b\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\156fd6e0003c203b80b99203079d0b4b\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\89633b97dc109f186aaec443ab1c617d\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\89633b97dc109f186aaec443ab1c617d\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\1d191caf76ebf412f237d28872efd3a9\appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\1d191caf76ebf412f237d28872efd3a9\appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\f1abcc824d667e5a35acb08109fd081c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\f1abcc824d667e5a35acb08109fd081c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\82040951ec0a5784f9c04c3c9c96a47b\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\82040951ec0a5784f9c04c3c9c96a47b\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\88dec3298c0337dff4837298747701c9\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\88dec3298c0337dff4837298747701c9\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\5e662eb73d26d90c11478aec353902e4\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\5e662eb73d26d90c11478aec353902e4\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\56c7353e1987a3789eb6c332f8532e57\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\56c7353e1987a3789eb6c332f8532e57\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\58b00585bd15fd65e98b32eb2750485d\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\58b00585bd15fd65e98b32eb2750485d\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\85496b90e3a1136c1a7259e2b32b9006\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\85496b90e3a1136c1a7259e2b32b9006\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\fbf5e213d265b9ff48df63ca4012535c\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\fbf5e213d265b9ff48df63ca4012535c\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\6278e4c33a6f4a4a049f362e047d4481\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\6278e4c33a6f4a4a049f362e047d4481\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\59e10f0b50d7e2087df694ea5e68ec75\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\59e10f0b50d7e2087df694ea5e68ec75\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\f8504b42dd730e683e92669d56ec88c2\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\f8504b42dd730e683e92669d56ec88c2\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\da6bd613ae494f2b055b15145b857cb1\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\da6bd613ae494f2b055b15145b857cb1\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\e862ffca74ad530b898cf4b209d28464\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\e862ffca74ad530b898cf4b209d28464\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\0899ff91cb6838be6e247fdc6cf0a2c6\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\0899ff91cb6838be6e247fdc6cf0a2c6\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8f90226a262cd8fbb0e841a9bdeeb940\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8f90226a262cd8fbb0e841a9bdeeb940\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\7f549f090c877ece9967b2eb559f405f\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\7f549f090c877ece9967b2eb559f405f\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\6553a1bb8aa0e0ee87c56c30d44266dd\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\6553a1bb8aa0e0ee87c56c30d44266dd\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.3.2] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\e6fa58920d9ff0fd64b2aeb8c35cfd3c\core-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\e6fa58920d9ff0fd64b2aeb8c35cfd3c\core-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\9e5b33a0ddb61e517096e29f72087c8a\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\9e5b33a0ddb61e517096e29f72087c8a\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\64ec911bcab6758f55fac7cb3b41456f\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\64ec911bcab6758f55fac7cb3b41456f\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\d52b1610fcf9bf7da145b33fecfe96b7\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\d52b1610fcf9bf7da145b33fecfe96b7\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\2e4840494af0a5acaa64f0a22fd36542\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\2e4840494af0a5acaa64f0a22fd36542\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8d832f05e8cef35268d2155f720a94d8\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8d832f05e8cef35268d2155f720a94d8\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\5ba5b9c0138391e8a8ac45ec5baeab08\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\5ba5b9c0138391e8a8ac45ec5baeab08\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\a9f8496d6adace700c0f6127a5ca1d0f\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\a9f8496d6adace700c0f6127a5ca1d0f\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\3100446a1b30b99411a5d1ee028cd834\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\3100446a1b30b99411a5d1ee028cd834\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\5619f4589c59f612c218dc4ffeac4514\lifecycle-livedata-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\5619f4589c59f612c218dc4ffeac4514\lifecycle-livedata-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\14abec974181db4b9df0eb7b66eb67a6\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\14abec974181db4b9df0eb7b66eb67a6\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\eb2100bcc7f46beb9cafa60df7df6f83\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\eb2100bcc7f46beb9cafa60df7df6f83\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\b3cef20f14b33fa24d7642e0c258e925\lifecycle-runtime-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\b3cef20f14b33fa24d7642e0c258e925\lifecycle-runtime-2.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\ec2eeebdb6dfbb7b0090a77eabe8a64e\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\ec2eeebdb6dfbb7b0090a77eabe8a64e\savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\b40af0a0752a70d9293b85552d3ade6a\annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\b40af0a0752a70d9293b85552d3ade6a\annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+		ADDED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+		INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+		ADDED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+		INJECTED from D:\Project\testModuleParita\DownloadApp\customButton\src\main\AndroidManifest.xml
+application
+ADDED from [com.google.android.material:material:1.3.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\62454d5448b62e43f4a58111c5d338f2\material-1.3.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8e69c753471953602de435c4c1cc09c0\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\8e69c753471953602de435c4c1cc09c0\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.3.2] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\e6fa58920d9ff0fd64b2aeb8c35cfd3c\core-1.3.2\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.2] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\e6fa58920d9ff0fd64b2aeb8c35cfd3c\core-1.3.2\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\2e4840494af0a5acaa64f0a22fd36542\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\2e4840494af0a5acaa64f0a22fd36542\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.2] C:\Users\souvi\.gradle\caches\transforms-2\files-2.1\e6fa58920d9ff0fd64b2aeb8c35cfd3c\core-1.3.2\AndroidManifest.xml:24:18-86

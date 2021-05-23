@@ -1,6 +1,7 @@
 package com.parita.downloadapp
 
 import android.app.DownloadManager
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -22,6 +23,7 @@ import android.widget.Toast
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
@@ -31,16 +33,21 @@ import kotlinx.android.synthetic.main.content_main.view.*
 
 class MainFragment : Fragment() {
 
+    private val CHANNEL_ID: String = "DownloadApp"
     private lateinit var binding: FragmentMainBinding
     private lateinit var transitionListner: MotionLayout.TransitionListener
     private lateinit var downloadManager: DownloadManager
     private val PERMISSIONCODE: Int = 12
     var list: ArrayList<Long> = ArrayList()
+    var counter : Int = 1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        requireActivity().registerReceiver(
+            onComplete,
+            IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE)
+        )
     }
 
     override fun onCreateView(
@@ -57,6 +64,7 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+        createNotificationChannel()
         transitionListner = object : MotionLayout.TransitionListener {
             override fun onTransitionStarted(
                 motionLayout: MotionLayout?,
@@ -81,6 +89,9 @@ class MainFragment : Fragment() {
                         binding.downloadButton.motionLayout.button.text = ""
                         //  binding.downloadButton.motionLayout.transitionToStart()//Using this will create a smooth transition to the initial state.
                         binding.downloadButton.motionLayout.jumpToState(R.id.start)//Using this will create a direct jump to the initial state with out the animation.
+                        if(counter%2!=0)
+                            checkRadioButton()
+                        counter++
                     }
                 }, 1000)
             }
@@ -98,10 +109,10 @@ class MainFragment : Fragment() {
         binding.downloadButton.motionLayout.setTransitionListener(transitionListner)
     }
 
-    private fun checkRadioButton(view: View) {
+    private fun checkRadioButton() {
         val selectedRadioButtonId: Int = binding.rgSelector.checkedRadioButtonId
         if (selectedRadioButtonId != -1) {
-            var selectedRadioButton: RadioButton = view.findViewById(selectedRadioButtonId)
+            val selectedRadioButton: RadioButton = binding.rgSelector.findViewById(selectedRadioButtonId)
             val selectedRbText: String = selectedRadioButton.getText().toString()
             downloadCondition(selectedRbText)
         } else {
@@ -127,9 +138,8 @@ class MainFragment : Fragment() {
                 ) {
                     requestPermissions(
                         arrayOf(
-                            android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            android.Manifest.permission.INTERNET
-                        ), PERMISSIONCODE
+                            android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                        PERMISSIONCODE
                     )
                 } else {
                     download()
@@ -150,7 +160,7 @@ class MainFragment : Fragment() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
             PERMISSIONCODE -> {
-                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     download()
                 } else {
                     Snackbar.make(binding.root, "Permission is not granted", Snackbar.LENGTH_SHORT)
@@ -164,10 +174,6 @@ class MainFragment : Fragment() {
     private fun download() {
         downloadManager =
             requireActivity().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-        requireContext().registerReceiver(
-            onComplete,
-            IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE)
-        )
         val Download_Uri =
             Uri.parse("https://i.pinimg.com/564x/75/95/d3/7595d37ebb81c6c2d0b7160b597b082c.jpg")
         val request = DownloadManager.Request(Download_Uri)
@@ -194,7 +200,7 @@ class MainFragment : Fragment() {
             if (list.isEmpty()) {
                 Log.e("INSIDE", "" + referenceId)
                 val mBuilder: NotificationCompat.Builder =
-                    NotificationCompat.Builder(requireContext())
+                    NotificationCompat.Builder(requireContext(),CHANNEL_ID)
                         .setSmallIcon(android.R.drawable.btn_star)
                         .setContentTitle("DownloadApp")
                         .setContentText("All Download completed")
@@ -213,6 +219,23 @@ class MainFragment : Fragment() {
                     requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                 notificationManager.notify(455, mBuilder.build())
             }
+        }
+    }
+
+    private fun createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = getString(R.string.channel_name)
+            val descriptionText = getString(R.string.channel_description)
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+                description = descriptionText
+            }
+            // Register the channel with the system
+            val notificationManager: NotificationManager =
+                requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
         }
     }
 
