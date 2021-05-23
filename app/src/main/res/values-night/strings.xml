@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DownloadApp</string>
-    </resources>
+    <string name="radio_txt1">Glide-Image Loading Library by BumpTech</string>
+    <string name="radio_txt2">LoadApp - Current repository by udacity</string>
+    <string name="radio_txt3">Retrofit - Type-safe HTTP client for Android and Java by Square, Inc</string>
+</resources>
