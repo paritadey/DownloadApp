@@ -23,7 +23,6 @@ import android.widget.Toast
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
@@ -38,6 +37,7 @@ class MainFragment : Fragment() {
     private lateinit var transitionListner: MotionLayout.TransitionListener
     private lateinit var downloadManager: DownloadManager
     private val PERMISSIONCODE: Int = 12
+    private val NOTIFICATION_ID: Int = 13
     var list: ArrayList<Long> = ArrayList()
     var counter: Int = 1
     lateinit var status: String
@@ -132,20 +132,21 @@ class MainFragment : Fragment() {
             Log.d("TAG", "first is Selected")
             status = "Sucees"
             title = resources.getString(R.string.radio_txt1)
-            checkPermissionApp()
+            checkPermissionApp(true)
         } else if (select.contains("LoadApp")) {
             Log.d("TAG", "second is Selected")
             status = "Failure"
             title = resources.getString(R.string.radio_txt2)
+            checkPermissionApp(false)
         } else if (select.contains("Retrofit")) {
             Log.d("TAG", "third is Selected")
             status = "Sucees"
             title = resources.getString(R.string.radio_txt3)
-            checkPermissionApp()
+            checkPermissionApp(true)
         }
     }
 
-    private fun checkPermissionApp() {
+    private fun checkPermissionApp(status: Boolean) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(
                     requireContext(),
@@ -162,7 +163,10 @@ class MainFragment : Fragment() {
                     PERMISSIONCODE
                 )
             } else {
-                download()
+                if (status)
+                    download()
+                else
+                    createAppNotification()
             }
         }
     }
@@ -214,36 +218,38 @@ class MainFragment : Fragment() {
             list.remove(referenceId)
             if (list.isEmpty()) {
                 Log.e("INSIDE", "" + referenceId)
-                val mBuilder: NotificationCompat.Builder =
-                    NotificationCompat.Builder(requireContext(), CHANNEL_ID)
-                        .setSmallIcon(android.R.drawable.btn_star)
-                        .setContentTitle("DownloadApp")
-                        .setContentText("All Download completed")
-
-                val notificationIntent =
-                    Intent(requireActivity().applicationContext, MainActivity::class.java)
-                notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                notificationIntent.putExtra("destination", "DetailsFragment")
-                notificationIntent.putExtra("status", status)
-                notificationIntent.putExtra("title", title)
-
-                val pendingIntent = PendingIntent.getActivity(
-                    requireActivity(), 0, notificationIntent,
-                    PendingIntent.FLAG_UPDATE_CURRENT
-                )
-                mBuilder.setContentIntent(pendingIntent)
-                mBuilder.setAutoCancel(true)
-
-                val notificationManager =
-                    requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-                notificationManager.notify(455, mBuilder.build())
+                createAppNotification()
             }
         }
     }
 
+    private fun createAppNotification() {
+        val mBuilder: NotificationCompat.Builder =
+            NotificationCompat.Builder(requireContext(), CHANNEL_ID)
+                .setSmallIcon(android.R.drawable.btn_star)
+                .setContentTitle("DownloadApp")
+                .setContentText("All Download completed")
+
+        val notificationIntent =
+            Intent(requireActivity().applicationContext, MainActivity::class.java)
+        notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        notificationIntent.putExtra("destination", "DetailsFragment")
+        notificationIntent.putExtra("status", status)
+        notificationIntent.putExtra("title", title)
+
+        val pendingIntent = PendingIntent.getActivity(
+            requireActivity(), 0, notificationIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+        mBuilder.setContentIntent(pendingIntent)
+        mBuilder.setAutoCancel(true)
+
+        val notificationManager =
+            requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.notify(NOTIFICATION_ID, mBuilder.build())
+    }
+
     private fun createNotificationChannel() {
-        // Create the NotificationChannel, but only on API 26+ because
-        // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = getString(R.string.channel_name)
             val descriptionText = getString(R.string.channel_description)
@@ -251,7 +257,6 @@ class MainFragment : Fragment() {
             val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
                 description = descriptionText
             }
-            // Register the channel with the system
             val notificationManager: NotificationManager =
                 requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
