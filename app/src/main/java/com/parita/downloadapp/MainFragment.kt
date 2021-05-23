@@ -1,7 +1,12 @@
 package com.parita.downloadapp
 
 import android.app.DownloadManager
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.BroadcastReceiver
 import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
@@ -9,24 +14,25 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.parita.downloadapp.databinding.FragmentMainBinding
 import kotlinx.android.synthetic.main.content_main.view.*
 
+
 class MainFragment : Fragment() {
 
-    private lateinit var binding : FragmentMainBinding
-    private lateinit var transitionListner : MotionLayout.TransitionListener
+    private lateinit var binding: FragmentMainBinding
+    private lateinit var transitionListner: MotionLayout.TransitionListener
     private lateinit var downloadManager: DownloadManager
     private val PERMISSIONCODE: Int = 12
     var list: ArrayList<Long> = ArrayList()
@@ -41,7 +47,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_main, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
         return binding.root
     }
 
@@ -51,7 +57,7 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
-        transitionListner = object : MotionLayout.TransitionListener{
+        transitionListner = object : MotionLayout.TransitionListener {
             override fun onTransitionStarted(
                 motionLayout: MotionLayout?,
                 startId: Int,
@@ -70,14 +76,13 @@ class MainFragment : Fragment() {
             }
 
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-                Handler().postDelayed(object : Runnable{
+                Handler().postDelayed(object : Runnable {
                     override fun run() {
                         binding.downloadButton.motionLayout.button.text = ""
-                      //  binding.downloadButton.motionLayout.transitionToStart()//Using this will create a smooth transition to the initial state.
+                        //  binding.downloadButton.motionLayout.transitionToStart()//Using this will create a smooth transition to the initial state.
                         binding.downloadButton.motionLayout.jumpToState(R.id.start)//Using this will create a direct jump to the initial state with out the animation.
                     }
-                }
-                ,1000)
+                }, 1000)
             }
 
             override fun onTransitionTrigger(
@@ -92,6 +97,7 @@ class MainFragment : Fragment() {
         }
         binding.downloadButton.motionLayout.setTransitionListener(transitionListner)
     }
+
     private fun checkRadioButton(view: View) {
         val selectedRadioButtonId: Int = binding.rgSelector.checkedRadioButtonId
         if (selectedRadioButtonId != -1) {
@@ -135,6 +141,7 @@ class MainFragment : Fragment() {
             Log.d("TAG", "third is Selected")
         }
     }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -157,6 +164,10 @@ class MainFragment : Fragment() {
     private fun download() {
         downloadManager =
             requireActivity().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+        requireContext().registerReceiver(
+            onComplete,
+            IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE)
+        )
         val Download_Uri =
             Uri.parse("https://i.pinimg.com/564x/75/95/d3/7595d37ebb81c6c2d0b7160b597b082c.jpg")
         val request = DownloadManager.Request(Download_Uri)
@@ -171,6 +182,42 @@ class MainFragment : Fragment() {
             "/DownloadApp//SampleApp.png"
         )
         var refid: Long = downloadManager.enqueue(request)
+        list.add(refid)
 
+    }
+
+    var onComplete: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(ctxt: Context, intent: Intent) {
+            val referenceId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
+            Log.e("IN", "" + referenceId)
+            list.remove(referenceId)
+            if (list.isEmpty()) {
+                Log.e("INSIDE", "" + referenceId)
+                val mBuilder: NotificationCompat.Builder =
+                    NotificationCompat.Builder(requireContext())
+                        .setSmallIcon(android.R.drawable.btn_star)
+                        .setContentTitle("DownloadApp")
+                        .setContentText("All Download completed")
+
+                val notificationIntent = Intent(requireContext(), DetailsFragment::class.java)
+                notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                notificationIntent.putExtra("message", "This is a notification message")
+
+                val pendingIntent = PendingIntent.getActivity(
+                    requireContext(), 0, notificationIntent,
+                    PendingIntent.FLAG_UPDATE_CURRENT
+                )
+                mBuilder.setContentIntent(pendingIntent)
+
+                val notificationManager =
+                    requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                notificationManager.notify(455, mBuilder.build())
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        requireContext().unregisterReceiver(onComplete)
     }
 }
