@@ -39,7 +39,9 @@ class MainFragment : Fragment() {
     private lateinit var downloadManager: DownloadManager
     private val PERMISSIONCODE: Int = 12
     var list: ArrayList<Long> = ArrayList()
-    var counter : Int = 1
+    var counter: Int = 1
+    lateinit var status: String
+    lateinit var title: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,7 +91,7 @@ class MainFragment : Fragment() {
                         binding.downloadButton.motionLayout.button.text = ""
                         //  binding.downloadButton.motionLayout.transitionToStart()//Using this will create a smooth transition to the initial state.
                         binding.downloadButton.motionLayout.jumpToState(R.id.start)//Using this will create a direct jump to the initial state with out the animation.
-                        if(counter%2!=0)
+                        if (counter % 2 != 0)
                             checkRadioButton()
                         counter++
                     }
@@ -112,7 +114,8 @@ class MainFragment : Fragment() {
     private fun checkRadioButton() {
         val selectedRadioButtonId: Int = binding.rgSelector.checkedRadioButtonId
         if (selectedRadioButtonId != -1) {
-            val selectedRadioButton: RadioButton = binding.rgSelector.findViewById(selectedRadioButtonId)
+            val selectedRadioButton: RadioButton =
+                binding.rgSelector.findViewById(selectedRadioButtonId)
             val selectedRbText: String = selectedRadioButton.getText().toString()
             downloadCondition(selectedRbText)
         } else {
@@ -127,28 +130,40 @@ class MainFragment : Fragment() {
     private fun downloadCondition(select: String) {
         if (select.contains("Glide")) {
             Log.d("TAG", "first is Selected")
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (ContextCompat.checkSelfPermission(
-                        requireContext(),
-                        android.Manifest.permission.WRITE_EXTERNAL_STORAGE
-                    ) != PackageManager.PERMISSION_DENIED && (ContextCompat.checkSelfPermission(
-                        requireContext(),
-                        android.Manifest.permission.INTERNET
-                    ) != PackageManager.PERMISSION_DENIED)
-                ) {
-                    requestPermissions(
-                        arrayOf(
-                            android.Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                        PERMISSIONCODE
-                    )
-                } else {
-                    download()
-                }
-            }
+            status = "Sucees"
+            title = resources.getString(R.string.radio_txt1)
+            checkPermissionApp()
         } else if (select.contains("LoadApp")) {
             Log.d("TAG", "second is Selected")
+            status = "Failure"
+            title = resources.getString(R.string.radio_txt2)
         } else if (select.contains("Retrofit")) {
             Log.d("TAG", "third is Selected")
+            status = "Sucees"
+            title = resources.getString(R.string.radio_txt3)
+            checkPermissionApp()
+        }
+    }
+
+    private fun checkPermissionApp() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(
+                    requireContext(),
+                    android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+                ) != PackageManager.PERMISSION_DENIED && (ContextCompat.checkSelfPermission(
+                    requireContext(),
+                    android.Manifest.permission.INTERNET
+                ) != PackageManager.PERMISSION_DENIED)
+            ) {
+                requestPermissions(
+                    arrayOf(
+                        android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    ),
+                    PERMISSIONCODE
+                )
+            } else {
+                download()
+            }
         }
     }
 
@@ -179,8 +194,8 @@ class MainFragment : Fragment() {
         val request = DownloadManager.Request(Download_Uri)
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
         request.setAllowedOverRoaming(false)
-        request.setTitle(resources.getString(R.string.radio_txt1))
-        request.setDescription("Downloading image")
+        request.setTitle(resources.getString(R.string.app_name))
+        request.setDescription("Downloading resource")
         request.setVisibleInDownloadsUi(true)
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
         request.setDestinationInExternalPublicDir(
@@ -200,14 +215,17 @@ class MainFragment : Fragment() {
             if (list.isEmpty()) {
                 Log.e("INSIDE", "" + referenceId)
                 val mBuilder: NotificationCompat.Builder =
-                    NotificationCompat.Builder(requireContext(),CHANNEL_ID)
+                    NotificationCompat.Builder(requireContext(), CHANNEL_ID)
                         .setSmallIcon(android.R.drawable.btn_star)
                         .setContentTitle("DownloadApp")
                         .setContentText("All Download completed")
 
-                val notificationIntent = Intent(requireActivity().applicationContext, MainActivity::class.java)
+                val notificationIntent =
+                    Intent(requireActivity().applicationContext, MainActivity::class.java)
                 notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                notificationIntent.putExtra("message", "DetailsFragment")
+                notificationIntent.putExtra("destination", "DetailsFragment")
+                notificationIntent.putExtra("status", status)
+                notificationIntent.putExtra("title", title)
 
                 val pendingIntent = PendingIntent.getActivity(
                     requireActivity(), 0, notificationIntent,

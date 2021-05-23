@@ -14,5 +14,6 @@
         android:id="@+id/detailsFragment"
         android:name="com.parita.downloadapp.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+    </fragment>
 </navigation>
