@@ -27,6 +27,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.parita.downloadapp.databinding.FragmentMainBinding
+import com.parita.loadingbutton.CustomButton
 import kotlinx.android.synthetic.main.content_main.view.*
 
 
@@ -63,12 +64,12 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
-
+        binding.download.onButtonFilled ={ binding.download.showFillButtonToast() }
     }
 
     private fun initView() {
         createNotificationChannel()
-        transitionListner = object : MotionLayout.TransitionListener {
+        /*transitionListner = object : MotionLayout.TransitionListener {
             override fun onTransitionStarted(
                 motionLayout: MotionLayout?,
                 startId: Int,
@@ -110,6 +111,10 @@ class MainFragment : Fragment() {
 
         }
         binding.downloadButton.motionLayout.setTransitionListener(transitionListner)
+*/
+        binding.download.setOnClickListener{
+            checkRadioButton()
+        }
     }
 
     private fun checkRadioButton() {
@@ -267,5 +272,8 @@ class MainFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         requireContext().unregisterReceiver(onComplete)
+    }
+    private fun CustomButton.showFillButtonToast(){
+        binding.download.text="Download Completed"
     }
 }

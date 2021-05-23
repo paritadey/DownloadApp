@@ -90,5 +90,5 @@ dependencies {
 
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0-beta02'
-
+    implementation project(':loadingbutton')
 }
