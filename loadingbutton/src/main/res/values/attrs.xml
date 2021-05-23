@@ -3,5 +3,7 @@
         <attr name="fillColor" format="color"/>
         <attr name="fillAlpha" format="integer"/>
         <attr name="fillDuration" format="integer"/>
+        <attr name="loadingColor" format="integer"/>
+        <attr name="loadingProgress" format="integer"/>
     </declare-styleable>
 </resources>

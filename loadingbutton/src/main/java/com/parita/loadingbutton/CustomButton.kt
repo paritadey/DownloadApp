@@ -2,9 +2,7 @@ package com.parita.loadingbutton
 
 import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Paint
-import android.graphics.Rect
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.MotionEvent
 import androidx.appcompat.widget.AppCompatButton
@@ -12,6 +10,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.parita.loadingbutton.direction.CustomDirection
 import com.parita.loadingbutton.direction.LeftToRightDirection
+
 
 class CustomButton @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0): AppCompatButton(context, attrs, defStyle){
 
@@ -23,8 +22,11 @@ class CustomButton @JvmOverloads constructor(context: Context, attrs: AttributeS
     private val fillingColor: Int
     private val fillingAlpha: Int
     private val fillingDuration: Long
+    private val loadingColor : Int
+    private var loadingProgress : Int
 
     private val fillingPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val loadingPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var drawProgress : MutableLiveData<Boolean> = MutableLiveData()
     val _drawProgress : LiveData<Boolean>
         get()=drawProgress
@@ -39,11 +41,14 @@ class CustomButton @JvmOverloads constructor(context: Context, attrs: AttributeS
             fillingColor = getColor(R.styleable.CustomButton_fillColor, resources.getColor(R.color.purple_500))
             fillingAlpha = getInt(R.styleable.CustomButton_fillAlpha, 128)
             fillingDuration = getInt(R.styleable.CustomButton_fillDuration, 1500).toLong()
-
+            loadingColor = getColor(R.styleable.CustomButton_loadingColor, Color.YELLOW)
+            loadingProgress = getInt(R.styleable.CustomButton_loadingProgress, 0)
         }.recycle()
         fillingPaint.color = fillingColor
         fillingPaint.alpha = fillingAlpha
         customWidthValueAnimator.duration = fillingDuration
+
+        loadingPaint.color = loadingColor
         post {
             viewWidth = width
             viewHeight = height
@@ -57,6 +62,10 @@ class CustomButton @JvmOverloads constructor(context: Context, attrs: AttributeS
         super.onDraw(canvas)
         if (drawProgress.value == true && onButtonFilled != null){
             canvas?.drawRect(fillingRect, fillingPaint)
+            //canvas?.drawCircle((viewWidth*0.7).toFloat(),(viewHeight*0.55).toFloat(),(viewHeight*0.2).toFloat(),loadingPaint)
+            val rectF = RectF(50f, 20f, 100f, 80f)
+            canvas?.drawArc (rectF, 90f, 45f, false, loadingPaint)
+
         }
     }
 
