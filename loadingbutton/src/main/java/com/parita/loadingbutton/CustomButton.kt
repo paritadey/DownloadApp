@@ -63,8 +63,8 @@ class CustomButton @JvmOverloads constructor(context: Context, attrs: AttributeS
         if (drawProgress.value == true && onButtonFilled != null){
             canvas?.drawRect(fillingRect, fillingPaint)
             //canvas?.drawCircle((viewWidth*0.7).toFloat(),(viewHeight*0.55).toFloat(),(viewHeight*0.2).toFloat(),loadingPaint)
-            val rectF = RectF(50f, 20f, 100f, 80f)
-            canvas?.drawArc (rectF, 90f, 45f, false, loadingPaint)
+          //  val rectF = RectF(50f, 20f, 100f, 80f)
+            //canvas?.drawArc (rectF, 90f, 45f, false, loadingPaint)
 
         }
     }
